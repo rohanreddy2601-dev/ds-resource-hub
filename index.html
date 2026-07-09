@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0053)https://rohanreddy2601-dev.github.io/ds-resource-hub/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>corpus.ds — Data Science Resource Hub</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./DS- Resource Hub_files/css2" rel="stylesheet">
 <style>
   :root{
     --paper:#f4f6f1; --paper-grid:#e2e8dd; --paper-card:#ffffff;
@@ -211,23 +211,23 @@
 </head>
 <body>
 
-<div id="loadingScreen">
+<div id="loadingScreen" style="display: none;">
   <div class="spinner"></div>
   <p>connecting_to_cloud()...</p>
 </div>
 
 <nav>
   <div class="nav-brand"><span>corpus<span class="dot">.</span>ds</span></div>
-  <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <button class="nav-hamburger" onclick="document.querySelector(&#39;.nav-links&#39;).classList.toggle(&#39;open&#39;)">☰</button>
   <div class="nav-links">
-    <button class="nav-link" data-page="home" onclick="navigateTo('home')">Home</button>
-    <button class="nav-link" data-page="notes" onclick="navigateTo('notes')">Notes</button>
-    <button class="nav-link" data-page="assignment" onclick="navigateTo('assignment')">Assignments</button>
-    <button class="nav-link" data-page="lab" onclick="navigateTo('lab')">Lab Manuals</button>
-    <button class="nav-link" data-page="pyq" onclick="navigateTo('pyq')">PYQs</button>
-    <button class="nav-link" data-page="project" onclick="navigateTo('project')">Projects</button>
-    <button class="nav-link" data-page="syllabus" onclick="navigateTo('syllabus')">Syllabus</button>
-    <button class="nav-link" data-page="others" onclick="navigateTo('others')">Others</button>
+    <button class="nav-link active" data-page="home" onclick="navigateTo(&#39;home&#39;)">Home</button>
+    <button class="nav-link" data-page="notes" onclick="navigateTo(&#39;notes&#39;)">Notes</button>
+    <button class="nav-link" data-page="assignment" onclick="navigateTo(&#39;assignment&#39;)">Assignments</button>
+    <button class="nav-link" data-page="lab" onclick="navigateTo(&#39;lab&#39;)">Lab Manuals</button>
+    <button class="nav-link" data-page="pyq" onclick="navigateTo(&#39;pyq&#39;)">PYQs</button>
+    <button class="nav-link" data-page="project" onclick="navigateTo(&#39;project&#39;)">Projects</button>
+    <button class="nav-link" data-page="syllabus" onclick="navigateTo(&#39;syllabus&#39;)">Syllabus</button>
+    <button class="nav-link" data-page="others" onclick="navigateTo(&#39;others&#39;)">Others</button>
   </div>
   <div class="nav-actions">
     <button class="nav-btn accent" id="navAdminBtn" onclick="openLogin()">Admin Login</button>
@@ -247,11 +247,76 @@
 
   <div class="container">
 
-    <div id="homePage">
+    <div id="homePage" style="display: block;">
       <div class="section-title">Browse by category</div>
-      <div class="doc-grid" id="homeTiles"></div>
+      <div class="doc-grid" id="homeTiles"><div class="doc-card c-notes" style="cursor:pointer" onclick="navigateTo(&#39;notes&#39;)">
+      <div class="doc-type-icon">📝</div>
+      <div class="doc-name">Notes</div>
+      <div class="doc-meta-row"><span class="doc-subject">1 file(s)</span></div>
+      <span class="tag tag-notes">Browse →</span>
+    </div><div class="doc-card c-assignment" style="cursor:pointer" onclick="navigateTo(&#39;assignment&#39;)">
+      <div class="doc-type-icon">📋</div>
+      <div class="doc-name">Assignments</div>
+      <div class="doc-meta-row"><span class="doc-subject">0 file(s)</span></div>
+      <span class="tag tag-assignment">Browse →</span>
+    </div><div class="doc-card c-lab" style="cursor:pointer" onclick="navigateTo(&#39;lab&#39;)">
+      <div class="doc-type-icon">🧪</div>
+      <div class="doc-name">Lab Manuals</div>
+      <div class="doc-meta-row"><span class="doc-subject">0 file(s)</span></div>
+      <span class="tag tag-lab">Browse →</span>
+    </div><div class="doc-card c-pyq" style="cursor:pointer" onclick="navigateTo(&#39;pyq&#39;)">
+      <div class="doc-type-icon">🗂️</div>
+      <div class="doc-name">Previous Year Papers</div>
+      <div class="doc-meta-row"><span class="doc-subject">0 file(s)</span></div>
+      <span class="tag tag-pyq">Browse →</span>
+    </div><div class="doc-card c-project" style="cursor:pointer" onclick="navigateTo(&#39;project&#39;)">
+      <div class="doc-type-icon">💻</div>
+      <div class="doc-name">Projects</div>
+      <div class="doc-meta-row"><span class="doc-subject">1 file(s)</span></div>
+      <span class="tag tag-project">Browse →</span>
+    </div><div class="doc-card c-syllabus" style="cursor:pointer" onclick="navigateTo(&#39;syllabus&#39;)">
+      <div class="doc-type-icon">📖</div>
+      <div class="doc-name">Syllabus</div>
+      <div class="doc-meta-row"><span class="doc-subject">0 file(s)</span></div>
+      <span class="tag tag-syllabus">Browse →</span>
+    </div><div class="doc-card c-others" style="cursor:pointer" onclick="navigateTo(&#39;others&#39;)">
+      <div class="doc-type-icon">🔗</div>
+      <div class="doc-name">Others</div>
+      <div class="doc-meta-row"><span class="doc-subject">0 file(s)</span></div>
+      <span class="tag tag-others">Browse →</span>
+    </div></div>
       <div class="section-title">Recently added <span class="mono-tag">.tail(6)</span></div>
-      <div class="doc-grid" id="recentGrid"></div>
+      <div class="doc-grid" id="recentGrid"><div class="doc-card c-project">
+    <div class="doc-type-icon">💻</div>
+    <div class="doc-name">Data eng. overview sheet</div>
+    <div class="doc-meta-row">
+      <span class="doc-subject">project</span>
+      <span class="doc-sem">SEM 5</span>
+    </div>
+    <span class="tag tag-project">Projects</span>
+    <div class="doc-footer">
+      <span class="doc-date">8 Jul 2026</span>
+      <div class="doc-actions">
+        <button class="doc-btn view" onclick="openViewer(&#39;XyvAwusgyHcb6L603I8D&#39;)">👁 View</button>
+        <button class="doc-btn dl" onclick="downloadDoc(&#39;XyvAwusgyHcb6L603I8D&#39;)">⬇ Save</button>
+      </div>
+    </div>
+  </div><div class="doc-card c-notes">
+    <div class="doc-type-icon">📝</div>
+    <div class="doc-name">corpus ds hub 1</div>
+    <div class="doc-meta-row">
+      <span class="doc-subject">project</span>
+      <span class="doc-sem">SEM 1</span>
+    </div>
+    <span class="tag tag-notes">Notes</span>
+    <div class="doc-footer">
+      <span class="doc-date">8 Jul 2026</span>
+      <div class="doc-actions">
+        <button class="doc-btn view" onclick="openViewer(&#39;VBYi3V9QIUebkHN809KY&#39;)">👁 View</button>
+        <button class="doc-btn dl" onclick="downloadDoc(&#39;VBYi3V9QIUebkHN809KY&#39;)">⬇ Save</button>
+      </div>
+    </div>
+  </div></div>
     </div>
 
     <div id="categoryPage" style="display:none">
@@ -288,7 +353,7 @@
     <button class="nav-btn" onclick="logout()" style="border-color:rgba(255,255,255,.3)">← Back to site</button>
   </div>
   <div class="admin-body">
-    <div class="upload-zone" onclick="document.getElementById('fileInput').click()" id="uploadZone">
+    <div class="upload-zone" onclick="document.getElementById(&#39;fileInput&#39;).click()" id="uploadZone">
       <div class="upload-icon">📤</div>
       <h3>Click to select a file — or drag &amp; drop</h3>
       <p>PDF, Word, PPT, images — uploaded to Cloudinary cloud storage</p>
@@ -338,7 +403,7 @@
         <div class="form-group"><label>New</label><input type="password" id="newPwd" placeholder="New"></div>
         <div class="form-group"><label>Confirm</label><input type="password" id="confPwd" placeholder="Confirm"></div>
       </div>
-      <button onclick="changePassword()" style="margin-top:10px;background:var(--ink);color:#fff;border:none;padding:9px 20px;border-radius:var(--r-sm);font-family:'IBM Plex Mono',monospace;font-size:13px;cursor:pointer">Update password</button>
+      <button onclick="changePassword()" style="margin-top:10px;background:var(--ink);color:#fff;border:none;padding:9px 20px;border-radius:var(--r-sm);font-family:&#39;IBM Plex Mono&#39;,monospace;font-size:13px;cursor:pointer">Update password</button>
     </div>
   </div>
 </div>
@@ -360,8 +425,8 @@
     <h2>Admin Login</h2>
     <p class="sub">Only faculty/CRs with admin access can upload materials</p>
     <div class="login-error" id="loginError">Incorrect username or password</div>
-    <div class="form-group"><label>Username</label><input type="text" id="loginUser" placeholder="admin" onkeydown="if(event.key==='Enter')doLogin()"></div>
-    <div class="form-group" style="margin-bottom:0"><label>Password</label><input type="password" id="loginPass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
+    <div class="form-group"><label>Username</label><input type="text" id="loginUser" placeholder="admin" onkeydown="if(event.key===&#39;Enter&#39;)doLogin()"></div>
+    <div class="form-group" style="margin-bottom:0"><label>Password</label><input type="password" id="loginPass" placeholder="••••••••" onkeydown="if(event.key===&#39;Enter&#39;)doLogin()"></div>
     <button class="login-submit" onclick="doLogin()">Sign in →</button>
     <div class="login-hint">Default: admin / dshub2026 (change this after first login)</div>
   </div>
@@ -758,5 +823,6 @@ window.showToast = showToast;
 // initial render
 navigateTo('home');
 </script>
-</body>
-</html>
+
+
+</body></html>
