@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0053)https://rohanreddy2601-dev.github.io/ds-resource-hub/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>corpus.ds — Data Science Resource Hub</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link href="./DS- Resource Hub_files/css2" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#f4f6f1; --paper-grid:#e2e8dd; --paper-card:#ffffff;
@@ -19,6 +19,7 @@
     --purple:#7a4f9e; --purple-soft:#f0e8f6;
     --teal:#2e8c8c; --teal-soft:#e5f3f3;
     --gray:#5a5f66; --gray-soft:#eceef0;
+    --brown:#8a5a34; --brown-soft:#f3e8de;
     --shadow:0 2px 14px rgba(21,36,32,0.07); --shadow-lg:0 10px 40px rgba(21,36,32,0.16);
     --r:10px; --r-sm:6px;
   }
@@ -94,6 +95,7 @@
   .doc-card.c-project::before{background:var(--purple);}
   .doc-card.c-syllabus::before{background:var(--teal);}
   .doc-card.c-others::before{background:var(--gray);}
+  .doc-card.c-mids::before{background:var(--brown);}
   .doc-type-icon{width:42px;height:42px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px;}
   .c-notes .doc-type-icon{background:var(--blue-soft);}
   .c-assignment .doc-type-icon{background:var(--green-soft);}
@@ -102,6 +104,7 @@
   .c-project .doc-type-icon{background:var(--purple-soft);}
   .c-syllabus .doc-type-icon{background:var(--teal-soft);}
   .c-others .doc-type-icon{background:var(--gray-soft);}
+  .c-mids .doc-type-icon{background:var(--brown-soft);}
   .doc-name{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
   .doc-meta-row{display:flex;align-items:center;gap:6px;margin-bottom:8px;flex-wrap:wrap;}
   .doc-subject{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;color:var(--ink-faint);}
@@ -114,6 +117,7 @@
   .tag-project{background:var(--purple-soft);color:var(--purple);}
   .tag-syllabus{background:var(--teal-soft);color:var(--teal);}
   .tag-others{background:var(--gray-soft);color:var(--gray);}
+  .tag-mids{background:var(--brown-soft);color:var(--brown);}
   .doc-footer{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);}
   .doc-date{font-size:11px;color:var(--ink-faint);font-family:'IBM Plex Mono',monospace;}
   .doc-actions{display:flex;gap:6px;}
@@ -211,23 +215,24 @@
 </head>
 <body>
 
-<div id="loadingScreen" style="display: none;">
+<div id="loadingScreen">
   <div class="spinner"></div>
   <p>connecting_to_cloud()...</p>
 </div>
 
 <nav>
   <div class="nav-brand"><span>corpus<span class="dot">.</span>ds</span></div>
-  <button class="nav-hamburger" onclick="document.querySelector(&#39;.nav-links&#39;).classList.toggle(&#39;open&#39;)">☰</button>
+  <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
   <div class="nav-links">
-    <button class="nav-link active" data-page="home" onclick="navigateTo(&#39;home&#39;)">Home</button>
-    <button class="nav-link" data-page="notes" onclick="navigateTo(&#39;notes&#39;)">Notes</button>
-    <button class="nav-link" data-page="assignment" onclick="navigateTo(&#39;assignment&#39;)">Assignments</button>
-    <button class="nav-link" data-page="lab" onclick="navigateTo(&#39;lab&#39;)">Lab Manuals</button>
-    <button class="nav-link" data-page="pyq" onclick="navigateTo(&#39;pyq&#39;)">PYQs</button>
-    <button class="nav-link" data-page="project" onclick="navigateTo(&#39;project&#39;)">Projects</button>
-    <button class="nav-link" data-page="syllabus" onclick="navigateTo(&#39;syllabus&#39;)">Syllabus</button>
-    <button class="nav-link" data-page="others" onclick="navigateTo(&#39;others&#39;)">Others</button>
+    <button class="nav-link" data-page="home" onclick="navigateTo('home')">Home</button>
+    <button class="nav-link" data-page="notes" onclick="navigateTo('notes')">Notes</button>
+    <button class="nav-link" data-page="assignment" onclick="navigateTo('assignment')">Assignments</button>
+    <button class="nav-link" data-page="lab" onclick="navigateTo('lab')">Lab Manuals</button>
+    <button class="nav-link" data-page="pyq" onclick="navigateTo('pyq')">PYQs</button>
+    <button class="nav-link" data-page="project" onclick="navigateTo('project')">Projects</button>
+    <button class="nav-link" data-page="syllabus" onclick="navigateTo('syllabus')">Syllabus</button>
+    <button class="nav-link" data-page="others" onclick="navigateTo('others')">Others</button>
+    <button class="nav-link" data-page="mids" onclick="navigateTo('mids')">Sets of MIDs</button>
   </div>
   <div class="nav-actions">
     <button class="nav-btn accent" id="navAdminBtn" onclick="openLogin()">Admin Login</button>
@@ -247,81 +252,16 @@
 
   <div class="container">
 
-    <div id="homePage" style="display: block;">
+    <div id="homePage">
       <div class="section-title">Browse by category</div>
-      <div class="doc-grid" id="homeTiles"><div class="doc-card c-notes" style="cursor:pointer" onclick="navigateTo(&#39;notes&#39;)">
-      <div class="doc-type-icon">📝</div>
-      <div class="doc-name">Notes</div>
-      <div class="doc-meta-row"><span class="doc-subject">1 file(s)</span></div>
-      <span class="tag tag-notes">Browse →</span>
-    </div><div class="doc-card c-assignment" style="cursor:pointer" onclick="navigateTo(&#39;assignment&#39;)">
-      <div class="doc-type-icon">📋</div>
-      <div class="doc-name">Assignments</div>
-      <div class="doc-meta-row"><span class="doc-subject">0 file(s)</span></div>
-      <span class="tag tag-assignment">Browse →</span>
-    </div><div class="doc-card c-lab" style="cursor:pointer" onclick="navigateTo(&#39;lab&#39;)">
-      <div class="doc-type-icon">🧪</div>
-      <div class="doc-name">Lab Manuals</div>
-      <div class="doc-meta-row"><span class="doc-subject">0 file(s)</span></div>
-      <span class="tag tag-lab">Browse →</span>
-    </div><div class="doc-card c-pyq" style="cursor:pointer" onclick="navigateTo(&#39;pyq&#39;)">
-      <div class="doc-type-icon">🗂️</div>
-      <div class="doc-name">Previous Year Papers</div>
-      <div class="doc-meta-row"><span class="doc-subject">0 file(s)</span></div>
-      <span class="tag tag-pyq">Browse →</span>
-    </div><div class="doc-card c-project" style="cursor:pointer" onclick="navigateTo(&#39;project&#39;)">
-      <div class="doc-type-icon">💻</div>
-      <div class="doc-name">Projects</div>
-      <div class="doc-meta-row"><span class="doc-subject">1 file(s)</span></div>
-      <span class="tag tag-project">Browse →</span>
-    </div><div class="doc-card c-syllabus" style="cursor:pointer" onclick="navigateTo(&#39;syllabus&#39;)">
-      <div class="doc-type-icon">📖</div>
-      <div class="doc-name">Syllabus</div>
-      <div class="doc-meta-row"><span class="doc-subject">0 file(s)</span></div>
-      <span class="tag tag-syllabus">Browse →</span>
-    </div><div class="doc-card c-others" style="cursor:pointer" onclick="navigateTo(&#39;others&#39;)">
-      <div class="doc-type-icon">🔗</div>
-      <div class="doc-name">Others</div>
-      <div class="doc-meta-row"><span class="doc-subject">0 file(s)</span></div>
-      <span class="tag tag-others">Browse →</span>
-    </div></div>
+      <div class="doc-grid" id="homeTiles"></div>
       <div class="section-title">Recently added <span class="mono-tag">.tail(6)</span></div>
-      <div class="doc-grid" id="recentGrid"><div class="doc-card c-project">
-    <div class="doc-type-icon">💻</div>
-    <div class="doc-name">Data eng. overview sheet</div>
-    <div class="doc-meta-row">
-      <span class="doc-subject">project</span>
-      <span class="doc-sem">SEM 5</span>
-    </div>
-    <span class="tag tag-project">Projects</span>
-    <div class="doc-footer">
-      <span class="doc-date">8 Jul 2026</span>
-      <div class="doc-actions">
-        <button class="doc-btn view" onclick="openViewer(&#39;XyvAwusgyHcb6L603I8D&#39;)">👁 View</button>
-        <button class="doc-btn dl" onclick="downloadDoc(&#39;XyvAwusgyHcb6L603I8D&#39;)">⬇ Save</button>
-      </div>
-    </div>
-  </div><div class="doc-card c-notes">
-    <div class="doc-type-icon">📝</div>
-    <div class="doc-name">corpus ds hub 1</div>
-    <div class="doc-meta-row">
-      <span class="doc-subject">project</span>
-      <span class="doc-sem">SEM 1</span>
-    </div>
-    <span class="tag tag-notes">Notes</span>
-    <div class="doc-footer">
-      <span class="doc-date">8 Jul 2026</span>
-      <div class="doc-actions">
-        <button class="doc-btn view" onclick="openViewer(&#39;VBYi3V9QIUebkHN809KY&#39;)">👁 View</button>
-        <button class="doc-btn dl" onclick="downloadDoc(&#39;VBYi3V9QIUebkHN809KY&#39;)">⬇ Save</button>
-      </div>
-    </div>
-  </div></div>
+      <div class="doc-grid" id="recentGrid"></div>
     </div>
 
     <div id="categoryPage" style="display:none">
       <div class="main-layout">
-        <aside class="sidebar">firebase-app
+        <aside class="sidebar">
           <div class="sidebar-card">
             <div class="sidebar-label">Semester</div>
             <div id="semFilters"></div>
@@ -335,7 +275,6 @@
           <div class="content-header">
             <div>
               <h2 id="categoryTitle">Notes</h2>
-              <div class="sub" id="categorySub">filter(type=='notes')</div>
             </div>
             <div class="search-bar"><span class="search-icon">🔍</span><input type="text" placeholder="Search title or subject…" id="searchInput" oninput="renderCategory()"></div>
           </div>
@@ -353,7 +292,7 @@
     <button class="nav-btn" onclick="logout()" style="border-color:rgba(255,255,255,.3)">← Back to site</button>
   </div>
   <div class="admin-body">
-    <div class="upload-zone" onclick="document.getElementById(&#39;fileInput&#39;).click()" id="uploadZone">
+    <div class="upload-zone" onclick="document.getElementById('fileInput').click()" id="uploadZone">
       <div class="upload-icon">📤</div>
       <h3>Click to select a file — or drag &amp; drop</h3>
       <p>PDF, Word, PPT, images — uploaded to Cloudinary cloud storage</p>
@@ -376,6 +315,7 @@
           <option value="project">Project</option>
           <option value="syllabus">Syllabus</option>
           <option value="others">Others</option>
+          <option value="mids">Sets of MIDs</option>
         </select>
       </div>
       <div class="form-group"><label>Semester *</label>
@@ -403,7 +343,7 @@
         <div class="form-group"><label>New</label><input type="password" id="newPwd" placeholder="New"></div>
         <div class="form-group"><label>Confirm</label><input type="password" id="confPwd" placeholder="Confirm"></div>
       </div>
-      <button onclick="changePassword()" style="margin-top:10px;background:var(--ink);color:#fff;border:none;padding:9px 20px;border-radius:var(--r-sm);font-family:&#39;IBM Plex Mono&#39;,monospace;font-size:13px;cursor:pointer">Update password</button>
+      <button onclick="changePassword()" style="margin-top:10px;background:var(--ink);color:#fff;border:none;padding:9px 20px;border-radius:var(--r-sm);font-family:'IBM Plex Mono',monospace;font-size:13px;cursor:pointer">Update password</button>
     </div>
   </div>
 </div>
@@ -425,8 +365,8 @@
     <h2>Admin Login</h2>
     <p class="sub">Only faculty/CRs with admin access can upload materials</p>
     <div class="login-error" id="loginError">Incorrect username or password</div>
-    <div class="form-group"><label>Username</label><input type="text" id="loginUser" placeholder="admin" onkeydown="if(event.key===&#39;Enter&#39;)doLogin()"></div>
-    <div class="form-group" style="margin-bottom:0"><label>Password</label><input type="password" id="loginPass" placeholder="••••••••" onkeydown="if(event.key===&#39;Enter&#39;)doLogin()"></div>
+    <div class="form-group"><label>Username</label><input type="text" id="loginUser" placeholder="admin" onkeydown="if(event.key==='Enter')doLogin()"></div>
+    <div class="form-group" style="margin-bottom:0"><label>Password</label><input type="password" id="loginPass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
     <button class="login-submit" onclick="doLogin()">Sign in →</button>
     <div class="login-hint">Default: admin / dshub2026 (change this after first login)</div>
   </div>
@@ -451,24 +391,20 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/fireba
 import { getFirestore, collection, addDoc, deleteDoc, doc, onSnapshot, serverTimestamp, query, orderBy }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyC2sNVrUeVkhIPoOR9lnEsgWFPBwILKZ2A",
   authDomain: "ds--resources.firebaseapp.com",
-  databaseURL: "https://ds--resources-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "ds--resources",
   storageBucket: "ds--resources.firebasestorage.app",
   messagingSenderId: "165215493307",
-  appId: "1:165215493307:web:4e57f84c66e7d054531d9e",
-  measurementId: "G-2ZBK8G0WH1"
+  appId: "1:165215493307:web:4e57f84c66e7d054531d9e"
 };
-
 
 const app     = initializeApp(firebaseConfig);
 const db      = getFirestore(app);
 const docsCol = collection(db, "documents");
 
-const CLOUD_NAME = "xkugc0mb";
+const CLOUD_NAME    = "xkugc0mb";
 const UPLOAD_PRESET = "x5niuo7r";
 
 let adminUser = JSON.parse(localStorage.getItem('dshub_auth') || '{"username":"admin","password":"dshub2026"}');
@@ -482,9 +418,10 @@ const typeInfo = {
   pyq:        {label:'Previous Year Papers',  emoji:'🗂️', key:'pyqs'},
   project:    {label:'Projects',              emoji:'💻', key:'projects'},
   syllabus:   {label:'Syllabus',              emoji:'📖', key:'syllabus'},
-  others:     {label:'Others',                emoji:'🔗', key:'others'}
+  others:     {label:'Others',                emoji:'🔗', key:'others'},
+  mids:       {label:'Sets of MIDs',           emoji:'📑', key:'mids'}
 };
-const typeOrder = ['notes','assignment','lab','pyq','project','syllabus','others'];
+const typeOrder = ['notes','assignment','lab','pyq','project','syllabus','others','mids'];
 
 // ---------- realtime listener ----------
 const q = query(docsCol, orderBy("createdAt","desc"));
@@ -544,7 +481,6 @@ function renderHome(){
 function renderCategory(){
   const info = typeInfo[currentType];
   document.getElementById('categoryTitle').textContent = info.label;
-  document.getElementById('categorySub').textContent = `filter(type=='${currentType}')`;
 
   const scoped = allDocs.filter(d=>d.type===currentType);
 
@@ -611,6 +547,10 @@ function formatDate(ts){
 }
 
 // ---------- viewer ----------
+function attachmentURL(url){
+  // Forces Cloudinary to send the file as a real download instead of an inline/blocked response
+  return url.includes('/upload/') ? url.replace('/upload/', '/upload/fl_attachment/') : url;
+}
 window.openViewer = function(id){
   const d = allDocs.find(x=>x.id===id);
   if(!d) return;
@@ -621,8 +561,11 @@ window.openViewer = function(id){
   body.innerHTML = '<div class="viewer-loading"><div class="spinner"></div><p>Loading file…</p></div>';
   const url = d.downloadURL;
   const ext = (d.fileName||'').split('.').pop().toLowerCase();
-  if(ext==='pdf'){
-    body.innerHTML = `<iframe src="${url}" title="${d.title}"></iframe>`;
+  if(['pdf','doc','docx','ppt','pptx','xls','xlsx'].includes(ext)){
+    // Google's viewer renders every page and ignores the host's download headers,
+    // so this shows the complete document instead of triggering a download.
+    const viewerURL = 'https://docs.google.com/viewer?url=' + encodeURIComponent(url) + '&embedded=true';
+    body.innerHTML = `<iframe src="${viewerURL}" title="${d.title}"></iframe>`;
   } else if(['jpg','jpeg','png','gif','webp'].includes(ext)){
     body.innerHTML = `<div style="flex:1;display:flex;align-items:center;justify-content:center;background:#111;padding:2rem"><img src="${url}" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:6px"></div>`;
   } else {
@@ -640,7 +583,7 @@ window.downloadDoc = function(id){
   const d = allDocs.find(x=>x.id===id);
   if(!d || !d.downloadURL){ showToast('File not found','error'); return; }
   const a = document.createElement('a');
-  a.href = d.downloadURL; a.target = '_blank'; a.download = d.fileName || d.title;
+  a.href = attachmentURL(d.downloadURL); a.target = '_blank'; a.download = d.fileName || d.title;
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   showToast('⬇ Download started!','success');
 };
@@ -823,6 +766,5 @@ window.showToast = showToast;
 // initial render
 navigateTo('home');
 </script>
-
-
-</body></html>
+</body>
+</html>
