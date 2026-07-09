@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rohanreddy2601-dev.github.io/ds-resource-hub/sitemap.xml
